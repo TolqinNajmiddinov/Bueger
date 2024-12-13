@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бургерная</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hero-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .burger-image {
+      position: absolute;
+      z-index: -2;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .burger1 { top: 10%; left: 5%; }
+    .burger2 { top: 30%; left: 50%; }
+    .burger3 { top: 60%; right: 5%; }
+
+    .navbar-transparent {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <nav class="bg-white bg-opacity-50 backdrop-blur-lg p-4 shadow-lg fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-semibold text-black">
+          <a href="#">Бургерная</a>
+        </div>
+        <div class="space-x-6 text-black hidden md:flex">
+          <a href="#home" class="hover:text-gray-200">Главная</a>
+          <a href="#menu" class="hover:text-gray-200">Меню</a>
+          <a href="#contact" class="hover:text-gray-200">Контакты</a>
+          <a href="#about" class="hover:text-gray-200">О нас</a>
+        </div>
+        <div class="md:hidden">
+          <button class="text-black focus:outline-none" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-container text-white py-20" style="background-image: url('./img/bg_img 1.png'); background-size: cover; background-position: center;">
+    <img src="./img/Без имени-1 2 (1).png" alt="Бургер 1" class="burger-image burger1">
+    <img src="./img/Без имени-1 2 (1).png" alt="Бургер 2" class="burger-image burger2">
+    <img src="https://via.placeholder.com/500x500?text=Бургер+3" alt="Бургер 3" class="burger-image burger3">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center hero-text">
+        <h2 class="text-4xl font-bold">Добро пожаловать в бургерную!</h2>
+        <button class="mt-20 bg-white text-black px-8 py-3 rounded-full hover:bg-yellow-500 hover:text-white">Заказать сейчас</button>
+      </div>
+  </section>
+
+  <section id="menu" class="my-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center">Наше меню</h2>
+      <p class="text-center mt-4 text-lg text-gray-600">Выберите из наших потрясающих вариантов бургеров!</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <img src="./img/Без имени-1 2 (1).png" alt="Бургер 1" class="w-full h-48 object-cover rounded-lg">
+          <h3 class="text-xl font-semibold mt-4">Классический бургер</h3>
+          <p class="text-gray-600 mt-2">Вкусный бургер с самыми свежими ингредиентами.</p>
+          <button class="mt-4 bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600">Заказать сейчас</button>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <img src="./img/Без имени-1 2 (1).png" alt="Бургер 2" class="w-full h-48 object-cover rounded-lg">
+          <h3 class="text-xl font-semibold mt-4">Чизбургер</h3>
+          <p class="text-gray-600 mt-2">Сочный бургер с расплавленным сыром и всеми добавками.</p>
+          <button class="mt-4 bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600">Заказать сейчас</button>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <img src="./img/Без имени-1 2 (1).png" alt="Бургер 3" class="w-full h-48 object-cover rounded-lg">
+          <h3 class="text-xl font-semibold mt-4">Вегетарианский бургер</h3>
+          <p class="text-gray-600 mt-2">Здоровая и вкусная вегетарианская опция с свежими овощами.</p>
+          <button class="mt-4 bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600">Заказать сейчас</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; 2024 Бургерная | Все права защищены</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('navbar-toggle');
+    const menu = document.querySelector('.md\\:flex');
+
+    toggleButton.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
